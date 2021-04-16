@@ -1,8 +1,24 @@
-# 🚧 WORK IN PROGRESS. See [#1](https://github.com/bdougie/octoherd-script-copy-labels/pull/1)
-
 # octoherd-script-copy-labels
 
 > This script copies labels from one repo to the next
+
+[![@latest](https://img.shields.io/npm/v/octoherd-script-copy-labels.svg)](https://www.npmjs.com/package/octoherd-script-copy-labels)
+[![Build Status](https://github.com/bdougie/octoherd-script-copy-labels/workflows/Test/badge.svg)](https://github.com/bdougie/octoherd-script-copy-labels/actions?query=workflow%3ATest+branch%3Amain)
+
+## Usage
+
+```js
+npx octoherd-script-copy-labels \
+  --octoherd-token 0123456789012345678901234567890123456789 \
+  "bdougie/*" \
+  --template bdougie/live
+```
+
+## Options
+
+| option       | type   | description                                                           |
+| ------------ | ------ | --------------------------------------------------------------------- |
+| `--template` | string | **(required)** this is the repo you want the labels to be copied from |
 
 ## Contributing
 
