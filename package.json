@@ -1,0 +1,28 @@
+{
+  "name": "octoherd-script-copy-labels",
+  "version": "0.0.0-development",
+  "type": "module",
+  "exports": "./script.js",
+  "bin": {
+    "octoherd-script-copy-labels": "./cli.js"
+  },
+  "description": "This script copies labels from one repo to the next",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node script.js"
+  },
+  "repository": "https://github.com/bdougie/octoherd-script-copy-labels",
+  "keywords": [
+    "octoherd-script"
+  ],
+  "author": "Brian Douglas (https://bdougie.live)",
+  "license": "ISC",
+  "dependencies": {
+    "@octoherd/cli": "^2.7.5"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
