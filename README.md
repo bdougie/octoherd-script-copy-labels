@@ -1,5 +1,3 @@
-# 🚧 WORK IN PROGRESS. See [#1](https://github.com/bdougie/octoherd-script-copy-labels/pull/1)
-
 # octoherd-script-copy-labels
 
 > This script copies labels from one repo to the next
