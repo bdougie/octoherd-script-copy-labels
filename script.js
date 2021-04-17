@@ -21,32 +21,34 @@ export async function script(octokit, repository, { template }) {
   const [templateOwner, templateRepo] = template.split("/");
   const [repoOwner, repoName] = repository.full_name.split("/");
 
-  const response = await octokit.request('GET /repos/{owner}/{repo}/labels', {
+  const labels = await octokit.request('GET /repos/{owner}/{repo}/labels', {
     owner: templateOwner,
     repo: templateRepo
   })
   try {
-    const {name, description, color} = response.data[0];
+    for (let i = 0; i < labels.data.length; i++) {
+      const {name, description, color} = labels.data[i];
 
-    const exists = await octokit.request('GET /repos/{owner}/{repo}/labels/{name}', {
-      owner: repoOwner,
-      repo: repoName,
-      name,
-    }).then(() => true, () => false)
-
-    octokit.log.info(`${name} label exists: ${exists}`)
-    
-    if (!exists) {
-      const label = await octokit.request('POST /repos/{owner}/{repo}/labels', {
+      const exists = await octokit.request('GET /repos/{owner}/{repo}/labels/{name}', {
         owner: repoOwner,
         repo: repoName,
         name,
-        description,
-        color
-      })
-      octokit.log.info(`${name} updated`)
-    }
+      }).then(() => true, () => false)
 
+      octokit.log.info(`${name} label exists: ${exists}`)
+      
+      if (!exists) {
+        const label = await octokit.request('POST /repos/{owner}/{repo}/labels', {
+          owner: repoOwner,
+          repo: repoName,
+          name,
+          description,
+          color
+        })
+
+        octokit.log.info(`${name} updated`)
+      }
+    }
   } catch(e) {
     octokit.log.error(e)
   }
