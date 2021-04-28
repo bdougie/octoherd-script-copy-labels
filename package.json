@@ -18,7 +18,7 @@
   "author": "Brian Douglas (https://bdougie.live)",
   "license": "ISC",
   "dependencies": {
-    "@octoherd/cli": "^2.7.5"
+    "@octoherd/cli": "^3.3.0"
   },
   "release": {
     "branches": [

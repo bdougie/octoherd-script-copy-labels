@@ -7,18 +7,31 @@
 
 ## Usage
 
+Minimal usage
+
 ```js
 npx octoherd-script-copy-labels \
-  --octoherd-token 0123456789012345678901234567890123456789 \
-  "bdougie/*" \
-  --template bdougie/live \
-  --octoherd-bypass-confirms true // To bypass each label confirmation.
+  --template bdougie/live
 ```
+
+Pass all options as CLI flags to avoid user prompts
+
+```
+npx octoherd-script-copy-labels \
+  --template bdougie/live \
+  -T ghp_0123456789abcdefghjklmnopqrstuvwxyzA \
+  -R "bdougie/*"
+  --octoherd-bypass-confirms true // Optional to bypass each label confirmation.
+```
+
 ## Options
 
-| option       | type   | description                                                           |
-| ------------ | ------ | --------------------------------------------------------------------- |
-| `--template` | string | **(required)** this is the repo you want the labels to be copied from |
+| option                       | type             | description                                                                                                                                                                                                                                 |
+| ---------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--template`                 | string           | **(required)** this is the repo you want the labels to be copied from                                                                                                                                                                       |
+| `--octoherd-token`, `-T`     | string           | A personal access token ([create](https://github.com/settings/tokens/new?scopes=repo)). Script will create one if option is not set                                                                                                         |
+| `--octoherd-repos`, `-R`     | array of strings | One or multiple space-separated repositories in the form of `repo-owner/repo-name`. `repo-owner/*` will find all repositories for one owner. `*` will find all repositories the user has access to. Will prompt for repositories if not set |
+| `--octoherd-bypass-confirms` | boolean          | Bypass prompts to confirm mutating requests                                                                                                                                                                                                 |
 
 ## Contributing
 
