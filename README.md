@@ -12,7 +12,7 @@ npx octoherd-script-copy-labels \
   --octoherd-token 0123456789012345678901234567890123456789 \
   "bdougie/*" \
   --template bdougie/live \
-  -- octoherd-bypass-confirms true // To bypass each label confirmation.
+  --octoherd-bypass-confirms true // To bypass each label confirmation.
 ```
 ## Options
 
