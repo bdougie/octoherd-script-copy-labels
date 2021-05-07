@@ -20,8 +20,7 @@ Pass all options as CLI flags to avoid user prompts
 npx octoherd-script-copy-labels \
   --template bdougie/live \
   -T ghp_0123456789abcdefghjklmnopqrstuvwxyzA \
-  -R "bdougie/*" \
-  --octoherd-bypass-confirms true // Optional to bypass each label confirmation.
+  -R "bdougie/*" 
 ```
 
 ## Options
